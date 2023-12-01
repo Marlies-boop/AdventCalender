@@ -10,62 +10,6 @@ namespace AdventCalender2023
 {
     internal class December_1
     {
-        //wat moet je kunnen doen:
-        //- input invoeren
-        //- eerste en laatse nummer uit elke lijn halen(array)
-        //- verschil weten tussen lijnen
-        //- als er 1 nummer in een lijn zit moet hij hem dubbel op tellen
-        //- alle nummers van de lijnen bij elkaar op tellen en terug geven(in een array opslaan en dan bij elkaar optellen)
-        //- letters negeren(af)
-
-        /*public static string test = "5ffour295";
-        public string input = new String(test.Where(char.IsDigit).ToArray());
-        public List<string> Text;
-        public static string fileName = "D1.txt";
-        public StreamWriter writer = File.CreateText(fileName);
-        public StreamReader reader = File.OpenText(fileName);
-
-
-        //maak een methode waar je de tekst kan invoeren.
-        public void Input()
-        {
-            Console.WriteLine(input);
-            int inputnumber = Convert.ToInt32(input);
-            Console.WriteLine(FirstNumber(inputnumber) + "" + LastNumber(inputnumber));
-
-            if (File.Exists(fileName))
-            {
-                StreamReader reader = File.OpenText(fileName);
-            }
-            else
-            {
-                Console.WriteLine("File does not exist!");
-            }
-
-            string line = reader.ReadLine();
-            while (line != null)
-            {
-                Console.WriteLine("This will now read the contents of the file: " + fileName);
-                Console.WriteLine(line);
-                line = reader.ReadLine();
-            }
-        }
-
-        public int FirstNumber(int inputnumber)
-        {
-            while (inputnumber >= 10)
-            {
-                inputnumber /= 10;
-            }
-
-            return inputnumber;
-        }
-
-        public int LastNumber(int inputnumber)
-        {
-            return (inputnumber % 10);
-        }*/
-
         public static string fileName = "D1.txt";
         public StreamReader reader = File.OpenText(fileName);
         public int Part1()
@@ -81,5 +25,44 @@ namespace AdventCalender2023
             Console.WriteLine(values.Sum());
             return values.Sum();
         }
+
+        public int Part2()
+        {
+            List<int> values = new();
+            string? line;
+            string forwardLine = @"(\d|one|two|three|four|five|six|seven|eight|nine)";
+            string backwardsLine = @"(\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin)";
+            while((line = reader.ReadLine()) != null)
+            {
+                string first = ParseNum(Regex.Match(line, forwardLine).Groups[1].Value);
+                string last = ParseNum(Regex.Match(string.Concat(line.Reverse()), backwardsLine).Groups[1].Value);
+                values.Add(int.Parse(first + last));
+            }
+            Console.WriteLine(values.Sum());
+            return values.Sum();
+        }
+
+        public static string ParseNum(in string num) => num switch
+        {
+            "one" => "1",
+            "two" => "2",
+            "three" => "3",
+            "four" => "4",
+            "five" => "5",
+            "six" => "6",
+            "seven" => "7",
+            "eight" => "8",
+            "nine" => "9",
+            "eno" => "1",
+            "owt" => "2",
+            "eerht" => "3",
+            "ruof" => "4",
+            "evif" => "5",
+            "xis" => "6",
+            "neves" => "7",
+            "thgie" => "8",
+            "enin" => "9",
+            _ => num
+        };
     }
 }

@@ -8,8 +8,20 @@ namespace AdventCalender2023;
     {
         static void Main(string[] args)
         {
+            //December_1();
+        }
+
+        static void December_1()
+        {
             December_1 test = new December_1();
             test.Part1();
+            test.Part2();
+
+        }
+
+        static void December_2() 
+        {
+            
         }
     }
 
