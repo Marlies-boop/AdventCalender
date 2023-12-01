@@ -8,7 +8,8 @@ namespace AdventCalender2023;
     {
         static void Main(string[] args)
         {
-
+            December_1 test = new December_1();
+            test.Part1();
         }
     }
 
