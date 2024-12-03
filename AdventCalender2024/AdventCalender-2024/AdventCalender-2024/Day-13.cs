@@ -2,5 +2,13 @@
 
 public class Day_13
 {
-    
+    public void Part1()
+    {
+        
+    }
+
+    public void Part2()
+    {
+        
+    }
 }
