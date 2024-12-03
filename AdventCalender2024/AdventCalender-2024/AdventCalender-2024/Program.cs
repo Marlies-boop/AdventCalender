@@ -1,5 +1,6 @@
 ﻿namespace AdventCalender_2024;
 
+//update text files in .bin folder
 class Program
 {
     static void Main(string[] args)
@@ -35,7 +36,7 @@ class Program
     {
         Day_1 day = new Day_1();
         day.Part1();
-        day.Part2();
+        //day.Part2();
     }
 
     static void December_2()
