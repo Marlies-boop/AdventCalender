@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventCalender-2024", "AdventCalender-2024\AdventCalender-2024.csproj", "{B0A3021A-0D89-484C-A5E4-FF79A27633FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0A3021A-0D89-484C-A5E4-FF79A27633FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A3021A-0D89-484C-A5E4-FF79A27633FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A3021A-0D89-484C-A5E4-FF79A27633FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A3021A-0D89-484C-A5E4-FF79A27633FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
